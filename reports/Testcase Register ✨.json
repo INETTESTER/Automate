@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-06-17T04:43:29.364Z",
+    "end": "2025-06-17T04:43:47.987Z",
+    "duration": 18623,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2961e55e-d887-4ab4-bb2e-b7c02f4d6d08",
+      "title": "",
+      "fullFile": "cypress\\e2e\\testcase.cy.js",
+      "file": "cypress\\e2e\\testcase.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2772763a-12c2-45cb-8d96-7b23803ee8d9",
+          "title": "template spec",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-001 - Login Pass",
+              "fullTitle": "template spec TC-001 - Login Pass",
+              "timedOut": null,
+              "duration": 10302,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "/* ==== Generated with Cypress Studio ==== */\ncy.visit('https://testoneid.inet.co.th/');\ncy.get('[href=\"https://testoneid.inet.co.th/portal_index\"] > .text-right').click();\ncy.get('#username').clear();\ncy.get('#username').type('mama1000');\ncy.get('#password').type('mama1000');\ncy.get('#signIn').click();\n// ✅ ตรวจว่ามีคำว่า mama1000 อยู่ใน div นี้\ncy.get('.col-md-offset-2.col-md-10').should('contain', 'mama1000');\n/* ==== End Cypress Studio ==== */",
+              "err": {},
+              "uuid": "37481d4e-39c3-45f1-ba47-5ae2a83cba3d",
+              "parentUUID": "2772763a-12c2-45cb-8d96-7b23803ee8d9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-002 - Login Fail",
+              "fullTitle": "template spec TC-002 - Login Fail",
+              "timedOut": null,
+              "duration": 5985,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "/* ==== Generated with Cypress Studio ==== */\ncy.visit('https://testoneid.inet.co.th/');\ncy.get('[href=\"https://testoneid.inet.co.th/portal_index\"] > .text-right').click();\ncy.get('#username').clear('m');\ncy.get('#username').type('mama1000');\ncy.get('#password').clear();\ncy.get('#password').type('mama1001');\ncy.get('#signIn').click();\n// ✅ ตรวจว่ามีคำว่า ชื่อผู้ใช้งานและรหัสผ่านไม่ตรงกับในระบบ อยู่ใน id นี้\ncy.get('#errorAlert').should('contain', 'ชื่อผู้ใช้งานและรหัสผ่านไม่ตรงกับในระบบ');\n/* ==== End Cypress Studio ==== */",
+              "err": {},
+              "uuid": "34397f4e-97da-472f-a9f3-8221ec3985db",
+              "parentUUID": "2772763a-12c2-45cb-8d96-7b23803ee8d9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "37481d4e-39c3-45f1-ba47-5ae2a83cba3d",
+            "34397f4e-97da-472f-a9f3-8221ec3985db"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 16287,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "Testcase Register ✨",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "reports",
+        "reportFilename": "Testcase Register ✨",
+        "overwrite": true,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
