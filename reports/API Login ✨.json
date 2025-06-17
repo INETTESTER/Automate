@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-06-17T04:10:25.140Z",
+    "end": "2025-06-17T04:10:46.183Z",
+    "duration": 21043,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "83f579be-2f92-46fe-8def-304916a20501",
+      "title": "",
+      "fullFile": "cypress\\e2e\\testcase.cy.js",
+      "file": "cypress\\e2e\\testcase.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3234858d-8525-4666-916d-dfa01d1f682a",
+          "title": "template spec",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-001 - Login Pass",
+              "fullTitle": "template spec TC-001 - Login Pass",
+              "timedOut": null,
+              "duration": 13297,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "/* ==== Generated with Cypress Studio ==== */\ncy.visit('https://testoneid.inet.co.th/');\ncy.get('[href=\"https://testoneid.inet.co.th/portal_index\"] > .text-right').click();\ncy.get('#username').clear();\ncy.get('#username').type('mama1000');\ncy.get('#password').type('mama1000');\ncy.get('#signIn').click();\n// ✅ ตรวจว่ามีคำว่า mama1000 อยู่ใน div นี้\ncy.get('.col-md-offset-2.col-md-10').should('contain', 'mama1000');\n/* ==== End Cypress Studio ==== */",
+              "err": {},
+              "uuid": "c0bf1552-75fd-4647-abdc-01377515d5d7",
+              "parentUUID": "3234858d-8525-4666-916d-dfa01d1f682a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-002 - Login Fail",
+              "fullTitle": "template spec TC-002 - Login Fail",
+              "timedOut": null,
+              "duration": 5181,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "/* ==== Generated with Cypress Studio ==== */\ncy.visit('https://testoneid.inet.co.th/');\ncy.get('[href=\"https://testoneid.inet.co.th/portal_index\"] > .text-right').click();\ncy.get('#username').clear('m');\ncy.get('#username').type('mama1000');\ncy.get('#password').clear();\ncy.get('#password').type('mama1001');\ncy.get('#signIn').click();\n// ✅ ตรวจว่ามีคำว่า ชื่อผู้ใช้งานและรหัสผ่านไม่ตรงกับในระบบ อยู่ใน id นี้\ncy.get('#errorAlert').should('contain', 'ชื่อผู้ใช้งานและรหัสผ่านไม่ตรงกับในระบบ');\n/* ==== End Cypress Studio ==== */",
+              "err": {},
+              "uuid": "a17beeb8-5a1e-426f-93d7-3494c14a30e4",
+              "parentUUID": "3234858d-8525-4666-916d-dfa01d1f682a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c0bf1552-75fd-4647-abdc-01377515d5d7",
+            "a17beeb8-5a1e-426f-93d7-3494c14a30e4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 18478,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "API Login ✨",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "reports",
+        "reportFilename": "API Login ✨",
+        "overwrite": true,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
