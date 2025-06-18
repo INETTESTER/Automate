@@ -42,7 +42,7 @@ fetch(apiUrl, {
 })
     .then(res => res.json())
     .then(data => {
-        console.log('', data);
+        console.log('                             ', data);
     })
     .catch(err => {
         console.error('เกิดข้อผิดพลาด:', err);

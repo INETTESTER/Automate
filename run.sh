@@ -1,13 +1,16 @@
 #!/bin/bash
 
-GOOGLE_URL="https://docs.google.com/spreadsheets/d/15LnQY1SpHplWb-EyYFAOWNgtPOBZ8-CjARjQlt18qXI/edit#gid=0"
+CSV_FILE="GoogleSheet/sheets.csv"
 
-# อ่านชื่อชีตจากไฟล์ sheets.csv
-while IFS= read -r SHEET_NAME || [[ -n "$SHEET_NAME" ]]; do
-    # ตัดช่องว่างด้านหน้า-หลังออก (trim)
+# อ่าน GOOGLE_URL จากบรรทัดแรก
+GOOGLE_URL=$(head -n 1 "$CSV_FILE")
+
+# อ่านบรรทัดที่ 2 เป็นต้นไป
+tail -n +2 "$CSV_FILE" | while IFS= read -r SHEET_NAME || [[ -n "$SHEET_NAME" ]]; do
+    # ตัดช่องว่างหน้า-หลังออก (trim)
     SHEET_NAME=$(echo "$SHEET_NAME" | xargs)
 
-    # ถ้า SHEET_NAME เป็นค่าว่างข้ามไปเลย
+    # ถ้า SHEET_NAME ว่าง ให้ข้าม
     if [[ -z "$SHEET_NAME" ]]; then
         continue
     fi
@@ -22,18 +25,16 @@ while IFS= read -r SHEET_NAME || [[ -n "$SHEET_NAME" ]]; do
 
     rm -f "reports/${REPORT_NAME}.json"
 
-    # รัน Cypress โดย redirect stdin เป็น /dev/null เพื่อป้องกัน stdin ถูกกิน
     echo "⭐ Running: ${REPORT_NAME}"
     npx cypress run \
         --spec "$CY_FILE" \
         --reporter mochawesome \
         --reporter-options "reportDir=reports,reportFilename=${REPORT_NAME},overwrite=true,html=false,json=true" < /dev/null
 
-    echo "----------------------------------------------------------------------------------------------------"
-    echo "⭐ Upload To Google Sheet: ${SHEET_NAME}"
+    echo "===================================================================================================="
+    echo "                              ⭐ Upload To Google Sheet: ${SHEET_NAME}"
     node Upload/UploadSheet.js "$GOOGLE_URL" "$SHEET_NAME"
-    echo "✅ Done: ${SHEET_NAME}"
-    echo "----------------------------------------------------------------------------------------------------"
+    echo "                              ✔️  Done: ${SHEET_NAME}"
+    echo "===================================================================================================="
     echo ""
-
-done <GoogleSheet/sheets.csv
+done
