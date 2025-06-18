@@ -25,14 +25,14 @@ tail -n +2 "$CSV_FILE" | while IFS= read -r SHEET_NAME || [[ -n "$SHEET_NAME" ]]
 
     rm -f "reports/${REPORT_NAME}.json"
 
-    echo "⭐ Running: ${REPORT_NAME}"
+    echo "⚡ Running: ${REPORT_NAME}"
     npx cypress run \
         --spec "$CY_FILE" \
         --reporter mochawesome \
         --reporter-options "reportDir=reports,reportFilename=${REPORT_NAME},overwrite=true,html=false,json=true" < /dev/null
 
     echo "===================================================================================================="
-    echo " ⭐ Upload To Google Sheet: ${SHEET_NAME}"
+    echo " ⏳ Upload To Google Sheet: ${SHEET_NAME}"
     node Upload/UploadSheet.js "$GOOGLE_URL" "$SHEET_NAME"
     echo " ✔️  Done: ${SHEET_NAME}"
     echo "===================================================================================================="
