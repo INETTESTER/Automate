@@ -24,7 +24,7 @@ describe('template spec', () => {
     cy.get('#password').type('mama1001');
     cy.get('#signIn').click();
     // ✅ ตรวจว่ามีคำว่า ชื่อผู้ใช้งานและรหัสผ่านไม่ตรงกับในระบบ อยู่ใน id นี้
-    cy.get('#errorAlert').should('contain', 'ชื่อผู้ใช้งานและรหัสผ่านไม่ตรงกับในระบบ')
+    cy.get('#errorAlert').should('contain', 'ชื่อผู้ใช้งานและรหัสผ่านไม่ตรงกับในระบd')
     /* ==== End Cypress Studio ==== */
   });
 })

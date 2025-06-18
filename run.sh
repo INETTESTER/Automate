@@ -32,9 +32,10 @@ tail -n +2 "$CSV_FILE" | while IFS= read -r SHEET_NAME || [[ -n "$SHEET_NAME" ]]
         --reporter-options "reportDir=reports,reportFilename=${REPORT_NAME},overwrite=true,html=false,json=true" < /dev/null
 
     echo "===================================================================================================="
-    echo "                              ⭐ Upload To Google Sheet: ${SHEET_NAME}"
+    echo " ⭐ Upload To Google Sheet: ${SHEET_NAME}"
     node Upload/UploadSheet.js "$GOOGLE_URL" "$SHEET_NAME"
-    echo "                              ✔️  Done: ${SHEET_NAME}"
+    echo " ✔️  Done: ${SHEET_NAME}"
     echo "===================================================================================================="
+    echo ""
     echo ""
 done
