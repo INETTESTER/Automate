@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-06-23T02:59:45.420Z",
+    "end": "2025-06-23T03:00:13.256Z",
+    "duration": 27836,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8e856bc6-d8e7-4ac3-aad3-3f903443059d",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Testcase_Register.cy.js",
+      "file": "cypress\\e2e\\Testcase_Register.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "360651cd-4c80-488c-aac6-db0ab261a0f6",
+          "title": "template spec",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-001 Login",
+              "fullTitle": "template spec TC-001 Login",
+              "timedOut": null,
+              "duration": 14503,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://testoneid.inet.co.th/');\n/* ==== Generated with Cypress Studio ==== */\ncy.get('[href=\"https://testoneid.inet.co.th/portal_index\"] > .text-right').click();\ncy.get('#username').clear('m');\ncy.get('#username').type('mama1000');\ncy.get('#password').clear('m');\ncy.get('#password').type('mama1000');\ncy.get('#signIn').click();\ncy.contains('mama1000');\n/* ==== End Cypress Studio ==== */",
+              "err": {},
+              "uuid": "2f568e27-dad2-49a3-a307-083a2a08cf81",
+              "parentUUID": "360651cd-4c80-488c-aac6-db0ab261a0f6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-002 ลงทะเบียนสำเร็จ",
+              "fullTitle": "template spec TC-002 ลงทะเบียนสำเร็จ",
+              "timedOut": null,
+              "duration": 10924,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "/* ==== Generated with Cypress Studio ==== */\nconst uniqueId = Date.now(); // ใช้ timestamp เพื่อให้ไม่ซ้ำ\nconst username = `user${uniqueId}`;\nconst password = `pass${uniqueId}`;\ncy.visit('https://testoneid.inet.co.th/');\ncy.get('[href=\"https://testoneid.inet.co.th/register\"] > .text-right').click();\ncy.get('#mobileNo').clear().type('00-0000-0000');\ncy.get('#username').clear().type(username);\ncy.get('#password').clear().type(password);\ncy.get('#confirmPassword').clear().type(password);\ncy.get('#term').check();\ncy.get('#register').click();\ncy.get('#submit').click();\ncy.contains('ลงทะเบียน สำเร็จ !!');\n/* ==== End Cypress Studio ==== */",
+              "err": {},
+              "uuid": "382622bf-4eda-4bae-b361-1b30f0de4b47",
+              "parentUUID": "360651cd-4c80-488c-aac6-db0ab261a0f6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2f568e27-dad2-49a3-a307-083a2a08cf81",
+            "382622bf-4eda-4bae-b361-1b30f0de4b47"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 25427,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "Testcase_Register",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "xreports",
+        "reportFilename": "Testcase_Register",
+        "overwrite": true,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

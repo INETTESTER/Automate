@@ -14,7 +14,7 @@ if (!sheetUrl || !sheetName) {
     process.exit(1);
 }
 // อ่านไฟล์ report.json
-const reportRaw = fs.readFileSync(`./reports/${sheetName}.json`, 'utf-8');
+const reportRaw = fs.readFileSync(`./xreports/${sheetName}.json`, 'utf-8');
 const report = JSON.parse(reportRaw);
 
 // ดึงเฉพาะ tests ใน suites ตัวแรกของ results ตัวแรก
