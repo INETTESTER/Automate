@@ -25,7 +25,7 @@ const updates = tests.map(test => {
     // title ตัวอย่าง "TC-001 - Login Pass" ให้แยกเอาแค่ "TC-001"
     const tc_id = test.title.split(' ')[0];
     // แปลง state เป็น Pass/Fail
-    const result = test.state === 'passed' ? 'Pass' : 'Fail';
+    const result = test.state === 'passed' ? '✔️Pass' : '❌Fail';
     return { tc_id, result };
 });
 
