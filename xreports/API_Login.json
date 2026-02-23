@@ -2,14 +2,14 @@
   "stats": {
     "suites": 1,
     "tests": 2,
-    "passes": 2,
+    "passes": 1,
     "pending": 0,
-    "failures": 0,
-    "start": "2026-02-23T04:03:03.829Z",
-    "end": "2026-02-23T04:03:22.357Z",
-    "duration": 18528,
+    "failures": 1,
+    "start": "2026-02-23T04:10:08.247Z",
+    "end": "2026-02-23T04:10:30.529Z",
+    "duration": 22282,
     "testsRegistered": 2,
-    "passPercent": 100,
+    "passPercent": 50,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,16 +18,16 @@
   },
   "results": [
     {
-      "uuid": "9d24ed5e-284f-49db-92d5-c819885240b7",
+      "uuid": "3c5999ac-aeb8-4b39-a3ad-df9e8a81480f",
       "title": "",
-      "fullFile": "cypress\\e2e\\Testcase_Register.cy.js",
-      "file": "cypress\\e2e\\Testcase_Register.cy.js",
+      "fullFile": "cypress\\e2e\\API_Login.cy.js",
+      "file": "cypress\\e2e\\API_Login.cy.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "cd0b3633-f0b3-4dfd-8de5-e7b2dd7e3349",
+          "uuid": "ecabe52d-3b39-4b06-8687-dbbd2a9de102",
           "title": "template spec",
           "fullFile": "",
           "file": "",
@@ -38,17 +38,17 @@
               "title": "TC-001 - Login Pass",
               "fullTitle": "template spec TC-001 - Login Pass",
               "timedOut": null,
-              "duration": 10320,
+              "duration": 8991,
               "state": "passed",
-              "speed": "slow",
+              "speed": "medium",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "/* ==== Generated with Cypress Studio ==== */\ncy.visit('https://testoneid.inet.co.th/');\ncy.get('[href=\"https://testoneid.inet.co.th/portal_index\"] > .text-right').click();\ncy.get('#username').clear();\ncy.get('#username').type('mama1000');\ncy.get('#password').type('mama1000');\ncy.get('#signIn').click();\n// ✅ ตรวจว่ามีคำว่า mama1000 อยู่ใน div นี้\ncy.get('.col-md-offset-2.col-md-10').should('contain', 'mama1000');\n/* ==== End Cypress Studio ==== */",
               "err": {},
-              "uuid": "a7e77161-e362-4cf1-afbe-f8e6bf938802",
-              "parentUUID": "cd0b3633-f0b3-4dfd-8de5-e7b2dd7e3349",
+              "uuid": "d1b2891c-05c5-4617-a4be-5b31fa5c9a38",
+              "parentUUID": "ecabe52d-3b39-4b06-8687-dbbd2a9de102",
               "isHook": false,
               "skipped": false
             },
@@ -56,30 +56,35 @@
               "title": "TC-002 - Login Fail",
               "fullTitle": "template spec TC-002 - Login Fail",
               "timedOut": null,
-              "duration": 6129,
-              "state": "passed",
-              "speed": "medium",
-              "pass": true,
-              "fail": false,
+              "duration": 11205,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
               "pending": false,
               "context": null,
-              "code": "/* ==== Generated with Cypress Studio ==== */\ncy.visit('https://testoneid.inet.co.th/');\ncy.get('[href=\"https://testoneid.inet.co.th/portal_index\"] > .text-right').click();\ncy.get('#username').clear('m');\ncy.get('#username').type('mama1000');\ncy.get('#password').clear();\ncy.get('#password').type('mama1001');\ncy.get('#signIn').click();\n// ✅ ตรวจว่ามีคำว่า ชื่อผู้ใช้งานและรหัสผ่านไม่ตรงกับในระบบ อยู่ใน id นี้\ncy.get('#errorAlert').should('contain', 'ชื่อผู้ใช้งานและรหัสผ่านไม่ตรงกับในระบบ');\n/* ==== End Cypress Studio ==== */",
-              "err": {},
-              "uuid": "d16a9846-8243-4784-9d88-fe387e1e6702",
-              "parentUUID": "cd0b3633-f0b3-4dfd-8de5-e7b2dd7e3349",
+              "code": "/* ==== Generated with Cypress Studio ==== */\ncy.visit('https://testoneid.inet.co.th/');\ncy.get('[href=\"https://testoneid.inet.co.th/portal_index\"] > .text-right').click();\ncy.get('#username').clear('m');\ncy.get('#username').type('mama1000');\ncy.get('#password').clear();\ncy.get('#password').type('mama1001');\ncy.get('#signIn').click();\n// ✅ ตรวจว่ามีคำว่า ชื่อผู้ใช้งานและรหัสผ่านไม่ตรงกับในระบบ อยู่ใน id นี้\ncy.get('#errorAlert').should('contain', 'ชื่อผู้ใช้งานและรหัสผ่านไม่ตรงกับในระบd');\n/* ==== End Cypress Studio ==== */",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 5000ms: expected '<div#errorAlert.alert.alert-danger>' to contain 'ชื่อผู้ใช้งานและรหัสผ่านไม่ตรงกับในระบd'",
+                "estack": "AssertionError: Timed out retrying after 5000ms: expected '<div#errorAlert.alert.alert-danger>' to contain 'ชื่อผู้ใช้งานและรหัสผ่านไม่ตรงกับในระบd'\n    at Context.eval (webpack://automate/./cypress/e2e/API_Login.cy.js:27:26)",
+                "diff": null
+              },
+              "uuid": "e8fc69d3-0370-4096-9e7b-73e6fef66160",
+              "parentUUID": "ecabe52d-3b39-4b06-8687-dbbd2a9de102",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "a7e77161-e362-4cf1-afbe-f8e6bf938802",
-            "d16a9846-8243-4784-9d88-fe387e1e6702"
+            "d1b2891c-05c5-4617-a4be-5b31fa5c9a38"
           ],
-          "failures": [],
+          "failures": [
+            "e8fc69d3-0370-4096-9e7b-73e6fef66160"
+          ],
           "pending": [],
           "skipped": [],
-          "duration": 16449,
+          "duration": 20196,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -102,7 +107,7 @@
     "mochawesome": {
       "options": {
         "quiet": false,
-        "reportFilename": "Testcase_Register",
+        "reportFilename": "API_Login",
         "saveHtml": false,
         "saveJson": true,
         "consoleReporter": "spec",
@@ -114,7 +119,7 @@
     "marge": {
       "options": {
         "reportDir": "xreports",
-        "reportFilename": "Testcase_Register",
+        "reportFilename": "API_Login",
         "overwrite": true,
         "html": false,
         "json": true
